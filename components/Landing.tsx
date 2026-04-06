@@ -59,7 +59,7 @@ export function Landing() {
                 <h1 className="leading-none uppercase tracking-tighter mb-4">
                   <Shuffle
                     text="RIT"
-                    className="font-pixel text-5xl sm:text-8xl md:text-9xl text-primary elite-heading-letter font-bold tracking-[0.1em] px-1"
+                    className="font-pixel text-5xl sm:text-8xl md:text-9xl text-primary elite-heading-letter tracking-[0.1em] px-1"
                     animationMode="random"
                     shuffleDirection="right"
                     shuffleTimes={3}

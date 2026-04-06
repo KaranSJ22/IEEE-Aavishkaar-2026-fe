@@ -54,18 +54,18 @@ const Countdown = () => {
       transition={{ duration: 0.8, delay: 0.5 }}
       className="pixel-border rounded-sm bg-card/80 backdrop-blur-sm px-4 py-5 sm:px-10 sm:py-6 w-full max-w-[min(100%,450px)] sm:max-w-fit mx-auto"
     >
-      <p className="text-center font-pixel text-[10px] sm:text-xs tracking-[0.2em] text-primary neon-text mb-6 font-bold flex items-center justify-center gap-2">
+      <p className="text-center font-pixel text-[10px] sm:text-xs tracking-[0.2em] text-primary neon-text mb-6 flex items-center justify-center gap-2">
         <span className="w-2 h-2 bg-primary animate-pulse" />
         COUNTDOWN
         <span className="w-2 h-2 bg-primary animate-pulse" />
       </p>
-      
+
       <div className="grid grid-cols-2 sm:flex sm:flex-row items-center justify-center gap-y-8 gap-x-4 sm:gap-6 uppercase">
         {time.length > 0 ? time.map((unit, i) => (
           <div key={unit.label} className="flex items-center justify-center sm:justify-start gap-4 sm:gap-6">
             <div className="flex flex-col items-center">
               <div className="relative">
-                <span className="font-pixel text-3xl sm:text-5xl text-primary neon-text tabular-nums elite-heading-letter font-bold tracking-tight">
+                <span className="font-pixel text-3xl sm:text-5xl text-primary neon-text tabular-nums elite-heading-letter tracking-tight">
                   {unit.value}
                 </span>
                 {/* Glowing bar below number */}
@@ -75,7 +75,7 @@ const Countdown = () => {
                 {unit.label}
               </span>
             </div>
-            
+
             {/* Show colon only between items in the same row, or on desktop */}
             {i % 2 === 0 && i < time.length - 1 && (
               <span className="hidden sm:inline font-pixel text-xl sm:text-4xl text-primary/30 mt-[-1rem] sm:mt-[-1.5rem]">:</span>

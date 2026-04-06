@@ -90,7 +90,7 @@ export const PremiumEventsSection = ({ events }: PremiumEventsSectionProps) => {
                   ease: "easeInOut"
                 }
               }}
-              className="elite-heading-letter font-pixel text-4xl sm:text-6xl md:text-8xl font-bold tracking-[0.1em] px-1"
+              className="elite-heading-letter font-pixel text-4xl sm:text-6xl md:text-8xl tracking-[0.1em] px-1"
               style={{
                 background: "linear-gradient(to right, #FF8C00, #FFD700, #FF4500)",
                 WebkitBackgroundClip: "text",
