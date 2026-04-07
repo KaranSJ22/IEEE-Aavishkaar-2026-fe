@@ -6,7 +6,7 @@ import Countdown from "@/components/Countdown"
 import FloatingElements from "@/components/FloatingElements"
 import { PremiumEventsSection } from "@/components/PremiumEventsSection"
 import Shuffle from "@/components/ui/Shuffle"
-import { fetchEvents } from "@/api/client"
+import { fetchEvents } from "@/lib/client"
 import type { TechfestEvent } from "@/types/event"
 
 const DitherBackground = lazy(() => import("@/components/DitherBackground"))
