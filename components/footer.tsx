@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { appConfig } from "@/configs/index";
 
 const quickLinks = [
   { label: "Events", href: "/events" },
@@ -23,13 +24,13 @@ const LinkedInIcon = () => (
 );
 
 const WebsiteIcon = () => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="w-5 h-5"
   >
     <circle cx="12" cy="12" r="10" />
@@ -56,16 +57,15 @@ export default function Footer() {
   const pathname = usePathname();
   const [activeSocial, setActiveSocial] = useState("");
 
-  /** Check if a quick link is active based on the current pathname */
   const isActive = (href: string) => pathname.startsWith(href);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-  const socials = [
-  { name: "Instagram", icon: <InstagramIcon />, link: "https://www.instagram.com/ieeeritb" },
-  { name: "LinkedIn", icon: <LinkedInIcon />, link: "https://www.linkedin.com/in/ieee-ritb/" },
-  { name: "Website", icon: <WebsiteIcon />, link: "https://ieee.ritb.in/" },
-];
+  const socials = appConfig.profile.socials.map((s: any) => ({
+    name: s.name,
+    icon: <s.icon className="w-5 h-5" />,
+    link: s.url,
+  }));
 
   return (
     <footer
@@ -224,12 +224,12 @@ export default function Footer() {
                   />
                 </h4>
                 <div className="flex gap-3">
-                  {socials.map((s) => (
+                  {socials.map((s: any) => (
                     <a
                       key={s.name}
                       href={s.link}
                       target="_blank" // Opens in a new tab
-                      rel="noopener noreferrer" 
+                      rel="noopener noreferrer"
                       onClick={() =>
                         setActiveSocial(activeSocial === s.name ? "" : s.name)
                       }
@@ -303,15 +303,15 @@ export default function Footer() {
                   <li className="flex items-center gap-2">
                     <span className="text-orange-700">◈</span>
                     <a
-                      href="mailto:ieeeritb@gmail.com"
+                      href={`mailto:${appConfig.profile.email}`}
                       className="transition-colors duration-200 hover:text-orange-400"
                     >
-                      ieeeritb@gmail.com
+                      {appConfig.profile.email}
                     </a>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-700 mt-0.5">◈</span>
-                    <span>RIT Bangalore, Karnataka 560054</span>
+                    <span>{appConfig.profile.location}</span>
                   </li>
                 </ul>
               </div>

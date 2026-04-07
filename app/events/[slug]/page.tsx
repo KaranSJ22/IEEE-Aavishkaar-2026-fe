@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { fetchEventBySlug } from "@/api/client"
+import { fetchEventBySlug } from "@/lib/client"
 import { EventDetailLiveBg } from "@/components/event-detail/EventDetailLiveBg"
 import { EventPdaSidebar } from "@/components/event-detail/EventPdaSidebar"
 import { SectionHeader } from "@/components/ui/SectionHeader"

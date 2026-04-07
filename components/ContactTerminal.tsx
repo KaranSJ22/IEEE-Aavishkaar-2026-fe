@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { appConfig } from "@/configs";
 
 export default function ContactTerminal() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -87,7 +88,7 @@ export default function ContactTerminal() {
                   <section className="contact-details">
                     <div className="terminal-block">
                        <div className="contact-line">TEL: +1 (555) 019-9323</div>
-                       <div className="contact-line">EML: ieeeritb@gmail.com</div>
+                       <div className="contact-line">EML: {appConfig.profile.email}</div>
                     </div>
                     <div className="date"></div>
                   </section>

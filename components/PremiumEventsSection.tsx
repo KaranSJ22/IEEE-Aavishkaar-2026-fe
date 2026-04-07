@@ -23,7 +23,7 @@ export const PremiumEventsSection = ({ events }: PremiumEventsSectionProps) => {
     slug: event.slug,
     title: event.title,
     date: formatDate(event.dateTime),
-    venue: event.venue,
+    venue: event.venue ?? '',
     description: event.description,
     contacts: event.coordinators.map(c => ({ name: c.name.toUpperCase(), phone: c.contactNumber })),
     variant: variants[index % variants.length],

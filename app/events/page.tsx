@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { fetchEvents } from "@/api/client"
+import { fetchEvents } from "@/lib/client"
 import { EventCard } from "@/components/ui/EventCard"
 import { SectionHeader } from "@/components/ui/SectionHeader"
 import GlitchTitle from "@/components/GlitchTitle"

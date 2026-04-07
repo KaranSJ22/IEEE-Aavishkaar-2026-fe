@@ -1,5 +1,5 @@
-import type { TechfestEvent } from '../types/event'
-import { getEventBySlug, mockEvents } from '../mocks/events'
+import type { TechfestEvent } from '@/types/event'
+import { getEventBySlug, mockEvents } from '@/mocks/events'
 
 const base = process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, '') ?? ''
 
